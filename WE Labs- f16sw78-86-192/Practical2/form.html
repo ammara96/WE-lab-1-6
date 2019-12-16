@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-indigo.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+
+<script>
+        function disable(){
+            document.getElementById("submit").disabled=true;
+        }
+        
+        function enablingButton(element){
+            
+        if(element){
+            document.getElementById("submit").disabled=false;
+        }	else{
+            document.getElementById("submit").disabled=true;
+        }
+            
+        }
+    
+        </script>
+    
+    </head>
+    
+
+    <body onload="disable()" class="jumbotron">
+    <div >
+        <h2>Student Registration</h2>
+    </div>
+    <form action="home.html" >
+            <div>    
+        <fieldset >
+            <legend>Registration</legend>
+        <label>Username: </label><input type="text" name="username" placeholder="username" required="required"/><br/>
+		<label>Password: </label><input minlength="8" type="password" name="password" required="required"/><br/>
+        <label>Gender:	</label>  <input type="radio" name="gender" value="Male">Male</input>
+				<input type="radio" name="gender" value="Female"/>Female</input><br/>
+                <label>Select Image:</label><br/>
+                <input type="file" name="img"/><br/>
+        <br/>
+        
+        <label>Remarks:</label><br/>        
+        
+        <textarea cols="30" rows="10">
+        </textarea>
+        
+        <br/>
+    <label>Country:</label><br/>
+        <select name="country" required="required">
+            <option value="None">None</option>
+			<option value="Pakistan" selected>Pakistan</option>
+			<option value="India">India</option>
+			<option value="England">England</option>
+			<option value="Australia">Australia</option>
+		</select>
+    <br/>
+    <br/>
+
+    <input type="checkbox" name="terms" onchange="enablingButton(this)"></input>
+    <label>Agree to term & Condition </label><br/>
+
+    <input type="reset" name="reset" value="Reset"/> 
+    <input type="submit" name="submit" id="submit" value="Submit"/>
+</div>
+</fieldset >
+
+<fieldset>
+
+        <input type="text" name="productName" required/><br/>
+        <input type="file" name="productImage" required="required"/><br/>
+        <input type="text" maxlength="20" name="productQuantity" onchange="checkValue"/><br/>
+        <input type="text" value="60" disabled/> <br/>
+
+</fieldset>
+
+</form>
+
+</body>
+</html>

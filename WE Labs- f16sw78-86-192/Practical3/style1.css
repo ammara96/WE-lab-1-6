@@ -1,0 +1,37 @@
+    .body-container{
+
+        background-color:#FEFFEF;
+        font-size: 12px;
+        font-display: initial;
+    }
+
+    h1{
+        font-family: Arial, Helvetica, sans-serif;
+    }
+    p{
+        font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        
+    }
+    article{
+        background-color: cornsilk;
+        font-family: 'Times New Roman', Times, serif;
+        text-align: center;
+    }
+
+
+    article>h2{
+        background-color: red;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }    
+
+     p{
+        background-color:seagreen;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        color:brown;
+    }    
+    
+    article>p{
+        background-color:slategrey;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        color: blue;
+    }    

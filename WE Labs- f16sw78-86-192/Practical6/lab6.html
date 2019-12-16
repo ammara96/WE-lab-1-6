@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+    <h2 id="name">
+    </h2>
+    <h3 id="brand"></h3>
+    <h3 id="color"></h3>
+    <h3 id="price"></h3>
+    
+    <script>
+    var person=new Object();
+    person.age=38;
+    person.name='zaheer';
+    person.contact=032134758;    
+    
+    function getAge(){
+        return this.age;
+    }
+    function setAge(age){
+        this.age=age;
+    }
+
+    function getName(){
+        return this.name;
+    }
+    
+    function getContact(){
+        return this.contact;
+    }
+    
+    console.log("age="+person.age);
+    console.log("name="+person.name);
+    console.log("contact="+person.contact);
+
+    
+    console.log("Cellphone");
+
+    // var cellPhone={ 
+
+    //     name:"Oppo A3S",
+    //     color:"Blue",
+    //     brand:"OPPO",
+    //     price:25000,
+
+
+    //     name:function(){
+    //         return this.name;
+    //     },
+
+    //     color:function(){
+    //         return this.color;
+    //     }
+
+
+    // };
+
+
+    
+            var cellPhone={ 
+                    name:"Oppo A3S",
+                    color:"Blue",
+                    brand:"OPPO",
+                    price:25000,
+
+
+                    // name:function(){
+                    //     return this.name;
+                    // },
+
+                    // color:function(){
+                    //     return this.color;
+                    // }
+       };
+
+    for( phone in cellPhone){
+        console.log(cellPhone[phone]);
+    }
+
+    document.getElementById('name').innerHTML=cellPhone.name;
+    document.getElementById('price').innerHTML=cellPhone.price;
+    document.getElementById('color').innerHTML=cellPhone.color;
+    document.getElementById('brand').innerHTML=cellPhone.brand;
+
+    
+
+
+    var cellPhone1=new Object();
+    cellPhone1.name="IPhone 11";
+    cellPhone1.brand="Apple";
+    cellPhone1.color="Grey";
+    cellPhone1.price=25000;
+    
+    cellPhone1.getName=function(){
+        return cellPhone1.name;
+    }
+    
+    cellPhone1.getBrand=function(){
+        return cellPhone1.brand;
+    }
+
+    cellPhone1.getColor=function(){
+        return cellPhone1.color;
+    }
+    
+    cellPhone1.getPrice=function(){
+        return cellPhone1.price;
+    }
+
+
+    for(phone in cellPhone1){
+        console.log(cellPhone1[phone]);
+    }
+
+    // cellPhone1=
+
+    </script>
+<br/>
+
+
+<p id="name1">
+</p>
+
+<p id="brand1">
+</p>
+
+<p id="color1">
+</p>
+
+<p id="price1">
+</p>
+
+
+
+<h1 id="book1"></h1>
+ISDN: 
+    <label id="isdn1"> </label>
+    Author: 
+        <label id="author1"> </label>
+
+    Title: 
+        <label id="title1"> </label>
+     Published Year: 
+
+    <p>
+        <label id="pub_year1"> </label>
+    </p>
+    Book2:  
+
+    <h1 id="book2"></h1>
+    <p>
+    <label id="isdn2"> </label>
+    </p>
+
+    <p>
+        <label id="author2"> </label>
+    </p>
+
+    <p>
+        <label id="title2"> </label>
+    </p>
+
+    <p>
+        <label id="pub_year2"> </label>
+    </p>
+
+
+<script>
+
+function Book(ISDN,author, title,pub_year){
+    this.ISDN=ISDN;
+    this.author=author;
+    this.title=title;
+    this.pub_year=pub_year;
+}
+
+var bookA=new Book(123,"xyz","abc",2019);
+var bookB=new Book(456,"abx","ryx",2018);
+
+
+document.getElementById('isdn1').innerHTML=bookA.ISDN;
+document.getElementById('author1').innerHTML=bookA.author;
+document.getElementById('title1').innerHTML=bookA.title;
+document.getElementById('pub_year1').innerHTML=bookA.year;
+
+
+// document.getElementById('book2').innerHTML=bookB;
+    
+</script>
+
+</body>
+</html>

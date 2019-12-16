@@ -1,0 +1,119 @@
+
+
+<!Doctype html>
+
+<html lang="en"> 
+<head>
+<title>Web Engineering</title>
+</head>
+
+<body>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script>
+                $(document).ready(function(){
+                    $('#click').click(function(){
+                    });
+                        $("p").css("background-color", "green");
+                        $('p').css('color',"red");
+                        $(".title").css("background-color", "grey");
+        });
+            </script>
+            
+First Name:
+<div class="myForm">
+    <form> 
+    <input type="text" id="firstName" placeholder="first name"></input><br/>
+    <input type="text" id="lastName" placeholder="Last Name"></input><br/>
+    <label  id="setFirstName" ></label><br/>
+    <button onclick="setName()" id="click">Click</button><br/>
+    </form>
+<h2 class="title" >Title</h2>
+<p>Page</p>
+</div>
+    
+    <script type="text/javascript">
+        /*
+        $(document).ready(function(){
+            let firstName=$('#firstName').value;
+            $('#firstName').text
+        });
+        */
+        document.getElementById('lastName').placeholder='Only use Last name' ;
+
+        function setName(){ 
+            let firstName=document.getElementById('firstName').value;
+            
+            document.getElementById('setFirstName').innerHTML =firstName;
+            // using placeholder
+            let lastNamePlaceholder=document.getElementById('lastName').placeholder;
+            document.getElementById('lastName').placeholder='Only use Last name' ;
+        
+        }
+
+    </script>
+
+<h3>Celcius To Fahrenheit </h3>
+<input type="text" placeholder="celcius"id="celciusToFahrenheit"/>
+<p id="fahrenheit"> </p>
+<button onclick="celciusToFahrenheit()"  id="toFahrenheit">Fahrenheit</button>
+<br/>
+
+
+<h3> Fahrenheit To Celcius </h3><br/>
+<input type="text" placeholder="Fahrenheit" id="fahrenheitToCelcius"/><br/>
+<p id="celcius"></p><br/>
+<button onclick="fahrenheitToCelcius()"   id="toCelcius">Celcius</button><br/>
+
+<script type="text/javascript">
+
+function celciusToFahrenheit(){
+    let celcius=document.getElementById('celciusToFahrenheit').value;
+    document.getElementById('fahrenheit').innerHTML=((celcius*9/5)+32);
+}
+
+function fahrenheitToCelcius(){
+    let fahrenheit=document.getElementById('fahrenheitToCelcius').value;
+    document.getElementById('celcius').innerHTML=((fahrenheit-32)*5/9)
+
+}
+
+
+</script>
+
+    <p id="ed"></p>
+    <textarea id="oo"></textarea>
+    <button onclick="evenAndOdd()" >Generate Even and Odd </button>
+
+<script>
+
+function evenAndOdd(){
+    let value=20;
+     ed=document.getElementById('ed').value;
+    let v="";
+    
+    for(i=0; i<20; i++){
+        if(isEven(i))
+        v=v.concat("Even->"+i+" \n ");
+        else
+        if(isOdd(i))
+        v=v.concat("Odd->"+i+" \n");
+    }
+            
+    document.getElementById('ed').innerHTML="Odd and Even"+v;
+}
+function isEven(value){
+    if(value%2)
+    return true;
+    return false;
+}
+
+function isOdd(){
+if(!value%2)
+return true;
+return false;
+}
+
+</script>
+
+</body>
+</html>

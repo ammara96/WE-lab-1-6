@@ -1,0 +1,402 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <style>
+        .navbar-inverse {
+            background-color: #4096ee;
+            border-color:grey;
+            .navbar-brand { color: #ffffff; }
+            .navbar-brand:hover { color: #ddedfd; }
+          
+            .navbar-nav {
+          
+              > .open {
+          
+                > a,
+                > a:focus,
+                > a:hover { background-color: #a1c4f0; }
+          
+              }
+          
+              > li {
+          
+                > a { color: #ffffff; }
+                > a:hover { @extend .navbar-brand:hover; }
+          
+              }
+          
+              .dropdown-menu {
+                padding: 0px;
+                overflow: hidden;
+          
+                .navbar-content {
+                  width:270px;
+                  padding: 15px;
+                  padding-bottom:0px;
+                }
+          
+                .navbar-content:before,
+                .navbar-content:after {
+                  display: table;
+                  content: "";
+                  line-height: 0;
+                }
+          
+                .navbar-footer {
+                  background-color: #ddd;
+          
+                  .navbar-footer-content { padding:15px 15px 15px 15px; }
+          
+                }
+          
+              }
+          
+            }
+          
+            .navbar-right > li:last-child { margin-right: 15px; }
+          
+          }
+          
+          .sidebar {
+            display: none;
+          
+            @media (min-width: 768px) {
+              position: fixed;
+              top: 51px;
+              bottom: 0;
+              left: 0;
+              z-index: 1000;
+              display: block;
+              padding: 0px 20px 20px;
+              overflow-x: hidden;
+              overflow-y: auto; // Scrollable contents if viewport is shorter than content.
+              background-color: #f5f5f5;
+              border-right: 1px solid #e7e7e7;
+            }
+          
+            .client-info {
+              background-color: #cbefff;
+              margin: 0px -20px;
+          
+              img {
+                border: 1px solid #a8e1fa;
+                margin: 10px;
+              }
+          
+              p {
+                font-weight: bold;
+                color: #555;
+                margin-top: 15px;
+                margin-right: 10px;
+              }
+          
+            }
+          
+          }
+          
+          .nav-sidebar {
+            margin-right: -21px; // 20px padding + 1px border
+            margin-bottom: 20px;
+            margin-left: -20px;
+            
+            li {
+          
+              > a {
+                position: relative;
+                display: block;
+                padding: 10px 20px;
+              }
+          
+              > a:focus,
+              > a:hover {
+                text-decoration: none;
+                background-color: #eee;
+              }
+          
+            }
+          
+            .active {
+          
+              > a,
+              > a:hover,
+              > a:focus {
+                color: #fff;
+                background-color: #428bca;
+              }
+          
+            }
+          
+            .sidebar-header {
+              display: block;
+              background-color: #ddd;
+              padding: 10px 20px;
+              color: #555;
+              font-size: 18px;
+            }
+          
+          
+          }
+        
+          
+.modal {
+  display: none;
+  position: fixed; 
+  padding-top: 50px;
+  left: 0; 
+  top: 0;
+  width: 100%;
+  height: 100%; 
+  background-color: rgb(0, 0, 0);
+  background-color: rgba(0, 0, 0, 0.5);
+}
+.modal-content {
+  position: relative; 
+  background-color: white;
+  padding: 20px; 
+  margin: auto; 
+  width: 75%;  
+  -webkit-animation-name: animatetop;
+  -webkit-animation-duration: 0.4s;
+  animation-name: animatetop;
+  animation-duration: 0.4s
+}
+.close-btn {
+  float: right; 
+  color: lightgray; 
+  font-size: 24px;  
+  font-weight: bold;
+}
+.close-btn:hover {
+  color: darkgray;
+}
+@-webkit-keyframes animatetop {
+  from {top:-300px; opacity:0} 
+  to {top:0; opacity:1}
+}
+@keyframes animatetop {
+  from {top:-300px; opacity:0}
+  to {top:0; opacity:1}
+}
+
+          </style>
+        
+    <title></title>
+  </head>
+  <body>
+ 
+
+    <nav class="navbar navbar-dark bg-dark navbar-inverse navbar-fixed-top">
+
+        <div class="container-fluid">
+      
+            <div class="navbar-header">
+              <a class="navbar-brand" href="">QWERTY</a>
+      
+            </div><!-- end .navbar-header -->
+      
+            <ul class="nav navbar-nav navbar-right">
+      
+              <li><a href=""><i class="fa fa-home fa-fw"></i> Home</a></li>
+      
+              <li>
+      
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user fa-fw"></i> User Sample Name <span class="caret"></span></a>
+      
+                <ul class="dropdown-menu">
+      
+                  <div class="navbar-content">
+      
+                    <p>User Sample Name <span class="text-muted">(username)</span></p>
+                    <p class="text-muted small">useremail@example.com</p>
+      
+                  </div>
+      
+                  <div class="navbar-footer">
+      
+                    <div class="navbar-footer-content clearfix padded">
+      
+                      <a href="" class="btn btn-default btn-sm pull-left"><i class="fa fa-wrench fa-fw"></i> Change Passowrd</a>
+                      <a href="" class="btn btn-default btn-sm pull-right"><i class="fa fa-sign-out fa-fw"></i> Log Out</a>
+      
+                    </div>
+      
+                  </div>
+      
+                </ul>
+      
+              </li>
+      
+            </ul>
+      
+        </div>
+      
+      </nav><!-- end .navbar -->
+      
+      <div class="container-fluid">
+      
+        <div class="row">
+        
+          <div class="col-sm-3 col-md-2 sidebar">
+      
+            <div class="client-info clearfix">
+              <img src="" alt="Cliente" width="50" height="50" class="pull-left">
+              <p>Sample Name</p>
+            </div>
+      
+            <ul class="nav nav-sidebar">
+      
+              <li><a href=""><i class="fa fa-user fa-fw"></i> Datos Personales</a></li>
+              <li><a href=""><i class="fa fa-folder fa-fw"></i> Expediente Medico/Dental</a></li>
+      
+              <a class="sidebar-header text-center" data-toggle="collapse" href="#clinica">Actividades Clinicas</a>
+              <div class="collapse" id="clinica">
+                <li><a href=""><i class="fa fa-th-list fa-fw"></i> Plan de Tratamiento</a></li>
+                <li><a href=""><i class="fa fa-puzzle-piece fa-fw"></i> Odontograma</a></li>
+                <li><a href=""><i class="fa fa-clipboard fa-fw"></i> Historial de Procedimientos</a></li>
+              </div>
+      
+              <li class="sidebar-header text-center">Administraci&oacute;n</li>
+              <li><a href=""><i class="fa fa-search fa-fw"></i> Buscar Paciente</a></li>
+              <li><a href=""><i class="fa fa-calculator fa-fw"></i> Presupuestos</a></li>
+              <li><a href=""><i class="fa fa-calculator fa-fw"></i> Presupuestos Procesados</a></li>
+              <li><a href=""><i class="fa fa-list fa-fw"></i> Pagos Realizados</a></li>
+              <li><a href=""><i class="fa fa-usd fa-fw"></i> Precios por Grupo</a></li>
+              <li><a href=""><i class="fa fa-list fa-fw"></i> Utilidades</a></li>
+      
+              <li class="sidebar-header text-center">Inventario</li>
+              <li><a href=""><i class="fa fa-search fa-fw"></i> Buscar Producto</a></li>
+              <li><a href=""><i class="fa fa-plus fa-fw"></i> Agregar Producto</a></li>
+              <li><a href=""><i class="fa fa-cube fa-fw"></i> Productos</a></li>
+              <li><a href=""><i class="fa fa-times fa-fw"></i> Productos Desactivados</a></li>
+              <li><a href=""><i class="fa fa-dashboard fa-fw"></i> Unidades de Medida</a></li>
+      
+              <li class="sidebar-header text-center">Paquetes</li>
+              <li><a href=""><i class="fa fa-tasks fa-fw"></i> Crear Paquete</a></li>
+              <li><a href=""><i class="fa fa-th-list fa-fw"></i> Paquetes</a></li>
+              <li><a href=""><i class="fa fa-times fa-fw"></i> Paquetes Desactivados</a></li>
+      
+              <li class="sidebar-header text-center">Entradas</li>
+              <li><a href=""><i class="fa fa-cubes fa-fw"></i> Entradas de Producto</a></li>
+              <li><a href=""><i class="fa fa-times fa-fw"></i> Entradas Canceladas</a></li>
+      
+              <li class="sidebar-header text-center">Salidas</li>
+              <li><a href=""><i class="fa fa-inbox fa-fw"></i> Peticiones</a></li>
+              <li><a href=""><i class="fa fa-th-large fa-fw"></i>Peticiones Atendidas</a></li>
+              <li><a href=""><i class="fa fa-times fa-fw"></i>Peticiones Canceladas</a></li>
+      
+              <li class="sidebar-header text-center">Altas</li>
+              <li><a href=""><i class="fa fa-user-md fa-fw"></i> Medicos</a></li>
+              <li><a href=""><i class="fa fa-user fa-fw"></i> Pacientes</a></li>
+              <li><a href=""><i class="fa fa-users fa-fw"></i> Grupos</a></li>
+              <li><a href=""><i class="fa fa-heart fa-fw"></i> Tratamientos</a></li>
+              <li><a href=""><i class="fa fa-heart fa-fw"></i> Tratamientos Preventivos</a></li>
+              <li><a href=""><i class="fa fa-heart fa-fw"></i> Evaluaciones</a></li>
+            </ul>
+      
+          </div><!-- end .sidebar -->
+          
+        </div>
+      
+      </div>
+      <div class="modal">
+        <div class="modal-header">
+          <span class="close-btn">&times;</span>
+          <h1>I am the Header</h1>
+        </div>
+        <div class="modal-content">
+          <p>this is the text inside the modal</p>
+        </div>
+        <div class="modal-footer">
+          <h2>I am the Footer</h2>
+        </div>
+      </div>      
+ 
+  <button  id="myBtn">Click</button>
+<br/>
+  <button  id="myBtn1">Click</button>
+
+<script>
+let modalBtn = document.getElementById("myBtn")
+let modal = document.querySelector(".modal")
+let closeBtn = document.querySelector(".close-btn")
+modalBtn.onclick = function(){
+  modal.style.display = "block"
+}
+closeBtn.onclick = function(){
+  modal.style.display = "none"
+}
+window.onclick = function(e){
+  if(e.target == modal){
+    modal.style.display = "none"
+  }
+}
+</script>
+
+
+<button type="button" class="btn btn-dark" data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo">Modal 1</button>
+<button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#exampleModal" data-whatever="@fat">Modal 2</button>
+<button type="button" class="btn btn-danger" data-toggle="modal" data-target="#exampleModal" data-whatever="@getbootstrap">Modal 3</button>
+
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Contact the team</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form>
+          <div class="form-group">
+            <label for="recipient-name" class="col-form-label">Email:</label>
+            <input type="text" class="form-control" id="recipient-name" placeholder="Enter email">
+          </div>
+          <div class="form-group">
+            <label for="message-text" class="col-form-label">Enter Your Message:</label>
+            <textarea class="form-control" id="message-text" placeholder="Enter your message"></textarea>
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Send message</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+    let modalBtn = document.getElementById("myBtn")
+    let modal = document.querySelector(".modal")
+    let closeBtn = document.querySelector(".close-btn")
+    modalBtn.onclick = function(){
+      modal.style.display = "block"
+    }
+    closeBtn.onclick = function(){
+      modal.style.display = "none"
+    }
+    window.onclick = function(e){
+      if(e.target == modal){
+        modal.style.display = "none"
+      }
+    }
+    </script>
+    
+
+<!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  </body>
+</html>
+
+
